@@ -24,7 +24,7 @@ var store1 = { //first store
     this.hrCookies = custsPerHour * Math.round(this.avgCookies);
     this.dailyCookies += this.hrCookies; //tally total
   //  console.log('Hrs ', i, ' Customers ', custsPerHour, ' Cookies ', this.hrCookies, ' Total ', this.dailyCookies);
-    this.hrSales.push('@ ' + i + ' , ' + custsPerHour+ 'customers bought ' + this.hrCookies + 'cookies, running total ' + this.dailyCookies); //store in array
+    this.hrSales.push(i + ':00: ' + this.hrCookies + ' Cookies');
     }
   }
 }
@@ -51,7 +51,7 @@ var store2 = { //second store
     this.hrCookies = custsPerHour * Math.round(this.avgCookies);
     this.dailyCookies += this.hrCookies; //tally total
 //    console.log('Hrs ', i, ' Customers ', custsPerHour, ' Cookies ', this.hrCookies, ' Total ', this.dailyCookies);
-    this.hrSales.push('@ ' + i + ' , ' + custsPerHour+ 'customers bought ' + this.hrCookies + 'cookies, running total ' + this.dailyCookies); //store in array
+    this.hrSales.push(i + ':00: ' + this.hrCookies + ' Cookies');
     }
   }
 }
@@ -77,7 +77,7 @@ var store3 = { //third store
     this.hrCookies = custsPerHour * Math.round(this.avgCookies);
     this.dailyCookies += this.hrCookies; //tally total
   //  console.log('Hrs ', i, ' Customers ', custsPerHour, ' Cookies ', this.hrCookies, ' Total ', this.dailyCookies);
-    this.hrSales.push('@ ' + i + ' , ' + custsPerHour+ 'customers bought ' + this.hrCookies + 'cookies, running total ' + this.dailyCookies); //store in array
+    this.hrSales.push(i + ':00: ' + this.hrCookies + ' Cookies');
     }
   }
 }
@@ -103,7 +103,7 @@ var store4 = { //fourth store
     this.hrCookies = custsPerHour * Math.round(this.avgCookies);
     this.dailyCookies += this.hrCookies; //tally total
 //    console.log('Hrs ', i, ' Customers ', custsPerHour, ' Cookies ', this.hrCookies, ' Total ', this.dailyCookies);
-    this.hrSales.push('@ ' + i + ' , ' + custsPerHour+ 'customers bought ' + this.hrCookies + 'cookies, running total ' + this.dailyCookies); //store in array
+    this.hrSales.push(i + ':00: ' + this.hrCookies + ' Cookies');
     }
   }
 }
@@ -129,23 +129,46 @@ var store5 = { //fifth store
     this.hrCookies = custsPerHour * Math.round(this.avgCookies);
     this.dailyCookies += this.hrCookies; //tally total
 //    console.log('Hrs ', i, ' Customers ', custsPerHour, ' Cookies ', this.hrCookies, ' Total ', this.dailyCookies);
-    this.hrSales.push('@ ' + i + ' , ' + custsPerHour+ 'customers bought ' + this.hrCookies + 'cookies, running total ' + this.dailyCookies); //store in array
+    this.hrSales.push(i + ':00: ' + this.hrCookies + ' Cookies'); //store in array
     }
   }
 }
 
 
+function domStuff() {
+  var container1 = document.createElement('div');
+
+  container1.innerHTML = '<p>' + store1.location + '</p>';
+  document.body.appendChild(container1);
+
+
+  var list1 = document.createElement('ul');
+  var listArr1 = [];
+
+  for (var i = 0; i < store1.hrSales.length; i++) {
+    listArr1.push('<li>' + store1.hrSales[i] + '</  li>');
+  }
+  var fullList1 = listArr1.join('');
+  list1.innerHTML = fullList1;
+  document.body.appendChild(list1);
+}
+
+domStuff()
+console.log(container1);
+
+
+
 store1.salesData(store1.hrSales);
-console.log('store1', store1.hrSales);
+console.log('store1', store1.location, store1.hrSales, store1.dailyCookies);
 
 store2.salesData(store2.hrSales);
-console.log('store2', store2.hrSales);
+console.log('store2', store2.location, store2.hrSales, store2.dailyCookies);
 
 store3.salesData(store3.hrSales);
-console.log('store3', store3.hrSales);
+console.log('store3', store3.location, store3.hrSales, store3.dailyCookies);
 
 store4.salesData(store4.hrSales);
-console.log('store4', store4.hrSales);
+console.log('store4', store4.location, store4.hrSales, store4.dailyCookies);
 
 store5.salesData(store5.hrSales);
-console.log('store5', store5.hrSales);
+console.log('store5', store5.location, store5.hrSales, store5.dailyCookies);

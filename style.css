@@ -1,0 +1,31 @@
+/* app style */
+body {
+
+}
+
+h1 {
+background: #a7482a;
+color: white;
+height: 100px;
+margin-bottom: 30px;
+font-family: Times;
+font-size: 24px;
+}
+header section {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header section img {
+  margin-top: 12px;
+  float: left;
+  margin-right: 20px;
+}
+
+header section li {
+  color: #fff;
+  display: inline-block;
+  margin-top: 45px;
+  margin-right: 80px;
+  font-size: 20px;
+}
