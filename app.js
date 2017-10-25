@@ -18,21 +18,28 @@ function Store(minCust, maxCust, avgCookies, location, hrSales) {
   this.hrCookies = 0; //cookies sold per hour
   this.dailyCookies = 0; //total for store
   this.hrSales = []; //array with hourly sales
-
+  this.salesHr();
 }
 
 //Creating prototype methods
 
-//Random number generator of sales per hour
-Store.prototype.salesHr = function () {
+//Random number generator funciton
+Store.prototype.random = function () {
 for (var i = 0; i < times.length; i++)  {
   var max = Math.ceil(this.maxCust);
   var min = Math.floor(this.minCust);
-  var custPerHr = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  }
+}
+
+// Calculate sales data function
+Store.prototype.salesHr = function () {
+for (var i = 0; i < times.length; i++)  {
+  var custPerHr = this.random();
   this.hrCookies = Math.round(custPerHr * this.avgCookies);
   this.dailyCookies += this.hrCookies; //tally total
   this.hrSales.push(this.hrCookies);
-//  console.log(times[i], this.hrSales[i]);
+  //console.log(times[i], this.hrSales[i]);
   }
  }
 
@@ -43,14 +50,6 @@ var seatCtr = new Store(11, 38, 3.7, 'Seattle Center');
 var capHill = new Store(20, 38, 2.3, 'Capitol Hill');
 var alki = new Store(2, 16, 4.6, 'Alki');
 
-//Calling the function
-pikeAndFirst.salesHr();
-seaTac.salesHr();
-seatCtr.salesHr();
-capHill.salesHr();
-alki.salesHr();
-
-//
 sites.push(pikeAndFirst);
 sites.push(seaTac);
 sites.push(seatCtr);
@@ -79,25 +78,25 @@ newRow.innerHTML = rowInfoStr;
 table.appendChild(newRow);
 }
 
-for (var i = 0; i < sites.length; i++) {
-  var totalInfo = ['<td>' + 'Totals ' + '</td>'];
-  var sitesCookies=0;
-
-  for(var j=0; j < sites[i].hrSales.length; j++) {
-    sitesCookies += sites[i].hrSales[j];
-  }
-
-  totalInfo.push('<td>' + sites[i].sitesCookies + '</td>');
-
-console.log(totalInfo);
-
-var totalInfoStr = rowInfo.join(' ');
-
-console.log(totalInfoStr);
-
-var newRow;
-
-newRow = document.createElement('tr');
-newRow.innerHTML = totalInfoStr;
-table.appendChild(newRow);
-}
+// for (var i = 0; i < sites.length; i++) {
+//   var totalInfo = ['<td>' + 'Totals ' + '</td>'];
+//   var sitesCookies=0;
+//
+//   for(var j=0; j < sites[i].hrSales.length; j++) {
+//     sitesCookies += sites[i].hrSales[j];
+//   }
+//
+//   totalInfo.push('<td>' + sites[i].sitesCookies + '</td>');
+//
+// console.log(totalInfo);
+//
+// var totalInfoStr = rowInfo.join(' ');
+//
+// console.log(totalInfoStr);
+//
+// var newRow;
+//
+// newRow = document.createElement('tr');
+// newRow.innerHTML = totalInfoStr;
+// table.appendChild(newRow);
+// }
