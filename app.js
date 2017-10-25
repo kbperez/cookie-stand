@@ -60,10 +60,18 @@ console.log('Sites',sites);
 
 
 for (var i = 0; i < sites.length; i++) {
-  data.push(
-//    '<td>' + cars[i].make + '</td>' +
-//    '<td>' + cars[i].model + '</td>' +
-//    '<td>' + cars[i].year + '</td>' +
-//    '<td>' + cars[i].mileage + '</td>'
-  )
+  var rowInfo = ['<td>' + sites[i].locaton + '</td>'];
+
+  for(var j=0; j < sites[i].hrSales.length; j++) {
+    rowInfo.push('<td>' + sites[i].hrSales[j] + '</td>');
+  }
+  rowInfo.push('<td>' + sites[i].dailyCookies + '</td>');
+}
+
+var newRow;
+
+for (var i=0; i < rowInfo.length; i++) {
+  newRow = document.createElement('tr');
+  newRow.innerHTML = rowInfo[i];
+  table.appendChild(newRow);
 }
