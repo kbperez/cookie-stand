@@ -79,4 +79,25 @@ newRow.innerHTML = rowInfoStr;
 table.appendChild(newRow);
 }
 
-console.log(sites[0].hrSales[0]);
+for (var i = 0; i < sites.length; i++) {
+  var totalInfo = ['<td>' + 'Totals ' + '</td>'];
+  var sitesCookies=0;
+
+  for(var j=0; j < sites[i].hrSales.length; j++) {
+    sitesCookies += sites[i].hrSales[j];
+  }
+
+  totalInfo.push('<td>' + sites[i].sitesCookies + '</td>');
+
+console.log(totalInfo);
+
+var totalInfoStr = rowInfo.join(' ');
+
+console.log(totalInfoStr);
+
+var newRow;
+
+newRow = document.createElement('tr');
+newRow.innerHTML = totalInfoStr;
+table.appendChild(newRow);
+}
