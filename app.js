@@ -56,22 +56,32 @@ sites.push(seaTac);
 sites.push(seatCtr);
 sites.push(capHill);
 sites.push(alki);
-console.log('Sites',sites);
+console.log('sites',sites);
 
-
+//Create an array with the store location first, the hourly sales data, and total  location sales
 for (var i = 0; i < sites.length; i++) {
-  var rowInfo = ['<td>' + sites[i].locaton + '</td>'];
-
+  var rowInfo = ['<td>' + sites[i].location + '</td>'];
+  console.log('begin',rowInfo);
   for(var j=0; j < sites[i].hrSales.length; j++) {
     rowInfo.push('<td>' + sites[i].hrSales[j] + '</td>');
   }
   rowInfo.push('<td>' + sites[i].dailyCookies + '</td>');
-}
+//}
+console.log(rowInfo);
 
+var rowInfoStr = rowInfo.join(' ');
+
+console.log(rowInfoStr);
 var newRow;
 
-for (var i=0; i < rowInfo.length; i++) {
-  newRow = document.createElement('tr');
-  newRow.innerHTML = rowInfo[i];
-  table.appendChild(newRow);
+newRow = document.createElement('tr');
+newRow.innerHTML = rowInfoStr;
+table.appendChild(newRow);
 }
+//var newRow;
+
+//for (var j = 0; j < data.length; j++) {
+//  newRow = document.createElement('tr');
+//  newRow.innerHTML = data[j];
+//  table.appendChild(newRow);
+//}
