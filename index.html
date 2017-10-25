@@ -1,40 +1,53 @@
-<!DOCTYPE html>
-
+<!DOCTYPE>
   <html>
 
   <head>
-    <!-- meta data goes here -->
-    <title>Pat's Salmon Cookies</title>
+    <title>Forms And Events Demo</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <body>
     <!-- content goes here -->
-      <header>
+      <form id="sample_form">
+        <fieldset>
+          <label for="first">first name:</label>
+          <input for="text" name="first" placeholder="enter your first name" required>
+        </fieldset>
 
-        <section>
+        <fieldset>
+          <label for="last">last name:</label>
+          <input for="text" name="last" placeholder="enter your last name" required>
+        </fieldset>
 
-          <img src="salmon.png" width="393.5" height="123">>
+        <fieldset>
+          <label for="enrolled">currently enrolled?</label>
+          <input type="checkbox" name="enrolled" value="enrolled">
+        </fieldset>
 
-          <nav>
-            <ul>
-              <li>Nav Item 1</li>
-              <li>Nav Item 2</li>
-              <li>Nav Item 3</li>
-              <li>Nav Item 4</li>
-            </ul>
-          </nav>
-        </section>
+        <fieldset>
+          <label for="future-classes">interested in future classes</label>
+          <input type="radio" name="future_classes" value="yes">yes
+          <input type="radio" name="future_classes" value="no">no
+        </fieldset>
 
+        <button id="submit_btn" type="submit">add student</button>
 
-      </header>
+      </form>
 
-<main>
-
-  <h1>Pat's Salmon Cookies</h1>
-
-</main>
-
-  </body>
+      <section id="students">
+        <table>
+          <thead>
+            <th>first name</th>
+            <th>last name</th>
+            <th>enrolled</th>
+            <th>future classes?</th>
+          </thead>
+          <tbody id="student_table">
+            <!-- student table data goes here -->
+          </tbody>
+        </table>
+      </section>
+      <script src="app.js"></script>
+    </body>
+  </html>
