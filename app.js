@@ -58,7 +58,7 @@ sites.push(capHill);
 sites.push(alki);
 console.log('sites',sites);
 
-//Create an array with the store location first, the hourly sales data, and total  location sales
+//Create an array with the store location first, the hourly sales data, and total  location sales, converts array to a string and adds a table row
 for (var i = 0; i < sites.length; i++) {
   var rowInfo = ['<td>' + sites[i].location + '</td>'];
   console.log('begin',rowInfo);
@@ -66,7 +66,7 @@ for (var i = 0; i < sites.length; i++) {
     rowInfo.push('<td>' + sites[i].hrSales[j] + '</td>');
   }
   rowInfo.push('<td>' + sites[i].dailyCookies + '</td>');
-//}
+
 console.log(rowInfo);
 
 var rowInfoStr = rowInfo.join(' ');
@@ -78,10 +78,5 @@ newRow = document.createElement('tr');
 newRow.innerHTML = rowInfoStr;
 table.appendChild(newRow);
 }
-//var newRow;
 
-//for (var j = 0; j < data.length; j++) {
-//  newRow = document.createElement('tr');
-//  newRow.innerHTML = data[j];
-//  table.appendChild(newRow);
-//}
+console.log(sites[0].hrSales[0]);
