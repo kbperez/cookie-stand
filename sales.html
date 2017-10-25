@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-
-  <html>
-
+<html>
   <head>
     <!-- meta data goes here -->
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>Pat's Sales Info</title>
+    <title>Sales Data</title>
   </head>
 
+
   <body>
-    <body>
     <!-- content goes here -->
-      <header>
+    <header>
+      <section>
+        <img src="salmon.png" width="393.5" height="123">>
+      </section>
+    </header>
 
-        <section>
+    <table id="shell">
+      <thead>
+        <th>'            '</th>
+        <th>6:00 am</th>
+        <th>7:00 am</th>
+        <th>8:00 am</th>
+        <th>9:00 am</th>
+        <th>10:00 am</th>
+        <th>11:00 am</th>
+        <th>12:00 pm</th>
+        <th>1:00 pm</th>
+        <th>2:00 pm</th>
+        <th>1:00 pm</th>
+        <th>2:00 pm</th>
+        <th>3:00 pm</th>
+        <th>4:00 pm</th>
+        <th>5:00 pm</th>
+        <th>6:00 pm</th>
+        <th>7:00 pm</th>
+        <th>8:00 pm</th>
+        <th>Daily Location Total</th>
+      </thead>
 
-          <img src="salmon.png" width="393.5" height="123">>
-
-        </section>
-
-
-      </header>
-
-<main>
-
-  <h1>Pat's Salmon Cookies</h1>
-  <script src="app.js"></script>
-
-</main>
-
-
+      <tbody id="table_content">
+        <!-- table content dynamically generated in JS -->
+      </tbody>
+    </table>
+    <script src="app.js"></script>
   </body>
+</html>
