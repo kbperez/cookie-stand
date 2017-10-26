@@ -1,31 +1,48 @@
 /* app style */
+/* app styles */
+
 body {
-
+  font-family: helvetica
 }
 
-h1 {
-background: #a7482a;
-color: white;
-height: 100px;
-margin-bottom: 30px;
-font-family: Times;
-font-size: 24px;
-}
-header section {
-  width: 960px;
-  margin: 0 auto;
+fieldset {
+  padding: 20px
 }
 
-header section img {
-  margin-top: 12px;
-  float: left;
-  margin-right: 20px;
+input[type="text"]{
+  padding: 7px;
+  border: solid 1px #000;
+  border-radius: 3px;
 }
 
-header section li {
+input[type="text"]:focus {
+  background: #000;
   color: #fff;
-  display: inline-block;
-  margin-top: 45px;
-  margin-right: 80px;
-  font-size: 20px;
+}
+
+button {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background: #000;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 3px:
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  margin-left: 20px;
+}
+
+thead{
+  background: gray;
+  color: white;
+  padding: 20px;
+  border: solid 1px #000;
+}
+
+td, th {
+  padding: 20px;
+  border: solid 1px #000;
 }

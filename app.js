@@ -1,6 +1,7 @@
 'use strict';
 
 var table = document.getElementById('table_content');
+var form = document.getElementById('input_form');
 var sites = [];
 var data = [];
 
@@ -57,46 +58,49 @@ sites.push(capHill);
 sites.push(alki);
 console.log('sites',sites);
 
+
 //Create an array with the store location first, the hourly sales data, and total  location sales, converts array to a string and adds a table row
-for (var i = 0; i < sites.length; i++) {
-  var rowInfo = ['<td>' + sites[i].location + '</td>'];
-  console.log('begin',rowInfo);
-  for(var j=0; j < sites[i].hrSales.length; j++) {
-    rowInfo.push('<td>' + sites[i].hrSales[j] + '</td>');
+
+Store.prototype.tableRow = function () {
+  for (var i = 0; i < sites.length; i++) {
+    var rowInfo = ['<td>' + sites[i].location + '</td>'];
+    console.log('begin',rowInfo);
+    for(var j=0; j < sites[i].hrSales.length; j++) {
+      rowInfo.push('<td>' + sites[i].hrSales[j] + '</td>');
+    }
+    rowInfo.push('<td>' + sites[i].dailyCookies + '</td>');
+
+  console.log(rowInfo);
+
+  var rowInfoStr = rowInfo.join(' ');
+
+  console.log(rowInfoStr);
+  var newRow;
+
+  newRow = document.createElement('tr');
+  newRow.innerHTML = rowInfoStr;
+  table.appendChild(newRow);
   }
-  rowInfo.push('<td>' + sites[i].dailyCookies + '</td>');
-
-console.log(rowInfo);
-
-var rowInfoStr = rowInfo.join(' ');
-
-console.log(rowInfoStr);
-var newRow;
-
-newRow = document.createElement('tr');
-newRow.innerHTML = rowInfoStr;
-table.appendChild(newRow);
 }
 
-// for (var i = 0; i < sites.length; i++) {
-//   var totalInfo = ['<td>' + 'Totals ' + '</td>'];
-//   var sitesCookies=0;
-//
-//   for(var j=0; j < sites[i].hrSales.length; j++) {
-//     sitesCookies += sites[i].hrSales[j];
-//   }
-//
-//   totalInfo.push('<td>' + sites[i].sitesCookies + '</td>');
-//
-// console.log(totalInfo);
-//
-// var totalInfoStr = rowInfo.join(' ');
-//
-// console.log(totalInfoStr);
-//
-// var newRow;
-//
-// newRow = document.createElement('tr');
-// newRow.innerHTML = totalInfoStr;
-// table.appendChild(newRow);
-// }
+function formData(event) {
+  event.preventDefault();
+
+  var stand = event.target.stand.value;
+  var min_cust = parseInt(event.target.min_cust.value);
+  var max_cust = parseInt(event.target.max_cust.value);
+  var avg_cookies = parseFloat(event.target.avg_cookies.value);
+
+  console.log(stand, min_cust, max_cust, avg_cookies);
+
+  data.push(new Store(min_cust, max_cust, avg_cookies, stand));
+  //createTable();
+  //form.reset();
+}
+
+form.addEventListener('submit', formData);
+
+
+
+
+pikeAndFirst.tableRow();
