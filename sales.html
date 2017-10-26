@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- meta data goes here -->
+<head>
+  <title>Sales Data</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="sales.css">
 
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Sales Data</title>
-  </head>
+</head>
+
+<header>
+    <h1>Pat's Cookie Stands Data</h1>
+  <section>
+        <img src="salmon.png" width="393.5" height="123">
+  </section>
+</header>
+
+<body>
+  <!-- content goes here -->
+    <form id="input_form">
+
+      <fieldset>
+        <label for="stand">Stand:</label>
+        <input for="text" name="stand" placeholder="Stand location" required>
+      </fieldset>
+
+      <fieldset>
+        <label for="min_cust">Minimum number of customer:</label>
+        <input for="number" name="min_cust" placeholder="Enter minimum number of customers" required>
+      </fieldset>
+
+      <fieldset>
+        <label for="max_cust">Maximum number of customer:</label>
+        <input for="text" name="max_cust" placeholder="Enter maximum number of customers" required>
+      </fieldset>
+
+      <fieldset>
+        <label for="avg_cookies">Average cookies per sale:</label>
+        <input for="text" name="avg_cookies" placeholder="Enter average cookies per sale" required>
+      </fieldset>
 
 
-  <body>
-    <!-- content goes here -->
-    <header>
-      <section>
-        <img src="salmon.png" width="393.5" height="123">>
-      </section>
-    </header>
+      <button id="submit_btn" type="submit">Add Store</button>
+
+    </form>
 
     <table id="shell">
       <thead>
-        <th>'            '</th>
+        <th>Location</th>
         <th>6:00 am</th>
         <th>7:00 am</th>
         <th>8:00 am</th>
@@ -27,8 +53,6 @@
         <th>10:00 am</th>
         <th>11:00 am</th>
         <th>12:00 pm</th>
-        <th>1:00 pm</th>
-        <th>2:00 pm</th>
         <th>1:00 pm</th>
         <th>2:00 pm</th>
         <th>3:00 pm</th>
