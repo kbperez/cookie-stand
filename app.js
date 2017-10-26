@@ -2,7 +2,7 @@
 
 var table = document.getElementById('table_content');
 var form = document.getElementById('input_form');
-var sites = [];
+//var sites = [];
 var data = [];
 
 
@@ -68,13 +68,13 @@ Store.prototype.tableRow = function () {
 
 }
 //Function to receive input
-function formData(event) {
+function formData(e) {
   event.preventDefault();
 
-  var stand = event.target.stand.value;
-  var min_cust = parseInt(event.target.min_cust.value);
-  var max_cust = parseInt(event.target.max_cust.value);
-  var avg_cookies = parseFloat(event.target.avg_cookies.value);
+  var stand = e.target.stand.value;
+  var min_cust = parseInt(e.target.min_cust.value);
+  var max_cust = parseInt(e.target.max_cust.value);
+  var avg_cookies = parseFloat(e.target.avg_cookies.value);
 
   console.log(stand, min_cust, max_cust, avg_cookies);
   var storeOne = new Store(min_cust, max_cust, avg_cookies, stand);

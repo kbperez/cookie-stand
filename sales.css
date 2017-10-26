@@ -1,7 +1,7 @@
 /* app style */
 
 body {
-  font-family: helvetica
+  font-family: times;
 }
 
 header {
@@ -15,7 +15,7 @@ h1 {
 }
 
 fieldset {
-  padding: 20px
+  padding: 10px 20px;
 }
 
 input[type="text"]{
@@ -41,6 +41,7 @@ button {
 }
 
 table {
+  font-family: helvetica;
   margin-left: 20px;
 }
 
