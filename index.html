@@ -2,61 +2,44 @@
   <html>
 
   <head>
-    <title>Forms And Events Demo</title>
+    <title>Pat's Salmon Cookies</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <!-- content goes here -->
-      <form id="sample_form">
-    <!--         <fieldset>
-          <label for="location">Select location</label>
-          <input type="radio" name="location" value="pikeAndFirst">1st and Pike
-          <input type="radio" name="location" value="seaTac">SeaTac Airport
-          <input type="radio" name="location" value="seatCtr">Seattle Center
-          <input type="radio" name="location" value="capHill">Capitol Hill
-          <input type="radio" name="location" value="alki">Alki
-        </fieldset> -->
-
-        <fieldset>
-          <label for="stand">Stand:</label>
-          <input for="text" name="location" placeholder="Stand location" required>
-        </fieldset>
-
-        <fieldset>
-          <label for="minCust">Minimum number of customer:</label>
-          <input for="text" name="minCust" placeholder="Enter minimum number of customers" required>
-        </fieldset>
-
-        <fieldset>
-          <label for="maxCust">Maximum number of customer:</label>
-          <input for="text" name="maxCust" placeholder="Enter maximum number of customers" required>
-        </fieldset>
-
-        <fieldset>
-          <label for="avgCookies">Average cookies per sale:</label>
-          <input for="text" name="avgCookies" placeholder="Enter average cookies per sale" required>
-        </fieldset>
-
-
-        <button id="submit_btn" type="submit">Add Store</button>
-
-      </form>
-
-      <section id="students">
-        <table>
-          <thead>
-            <th>Location</th>
-            <th>Minimum Customers</th>
-            <th>Maximum Customers</th>
-            <th>Average Cookies Per Sales</th>
-          </thead>
-          <tbody id="student_table">
-            <!-- student table data goes here -->
-          </tbody>
-        </table>
+    <header>
+      <section>
+        <img src="img/salmon.png" width="393.5" height="123">
+        <nav>
+          <ul>
+            <li>About Us</li>
+            <li>Merchandise</li>
+            <li>Contact Us</li>
+          </ul>
+        </nav>
       </section>
+    </header>
+
+    <main>
+      <img class="main banner" src="img/chinook.jpg"/960x450>
+
+      <ul class="sub-banners">
+        <li>
+          <img src="img/frosted-cookies.jpg"/300x375>
+        </li>
+        <li>
+          <img src="img/shirt.jpg"/300x375>
+        </li>
+        <li>
+          <img src="img/cutter.jpeg"/300x375>
+        </li>
+      </ul>
+
+    </main>
+
+
       <script src="app.js"></script>
     </body>
   </html>
