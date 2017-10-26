@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Sales Data</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="sales.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/sales.css">
 
 </head>
 
 <header>
     <h1>Pat's Cookie Stands Data</h1>
   <section>
-        <img src="salmon.png" width="393.5" height="123">
+        <img src="img/salmon.png" width="393.5" height="123">
   </section>
 </header>
 
@@ -20,22 +20,22 @@
 
       <fieldset>
         <label for="stand">Stand:</label>
-        <input for="text" name="stand" placeholder="Stand location" required>
+        <input type="text" name="stand" placeholder="Stand location" required>
       </fieldset>
 
       <fieldset>
         <label for="min_cust">Minimum number of customers:</label>
-        <input for="number" name="min_cust" placeholder="Enter minimum number of customers" min=1 max=99 required>
+        <input type="number" name="min_cust" placeholder="Enter minimum number of customers" min=1 max=99 required>
       </fieldset>
 
       <fieldset>
         <label for="max_cust">Maximum number of customers:</label>
-        <input for="text" name="max_cust" placeholder="Enter maximum number of customers" required>
+        <input type="number" name="max_cust" placeholder="Enter maximum number of customers" min=1 max=500 required>
       </fieldset>
 
       <fieldset>
         <label for="avg_cookies">Average cookies per sale:</label>
-        <input for="text" name="avg_cookies" placeholder="Enter average cookies per sale" required>
+        <input type="number" name="avg_cookies" placeholder="Enter average cookies per sale" step="0.01" min="0.01" required>
       </fieldset>
 
 

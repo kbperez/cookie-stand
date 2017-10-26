@@ -72,9 +72,9 @@ function formData(e) {
   event.preventDefault();
 
   var stand = e.target.stand.value;
-  var min_cust = parseInt(e.target.min_cust.value);
-  var max_cust = parseInt(e.target.max_cust.value);
-  var avg_cookies = parseFloat(e.target.avg_cookies.value);
+  var min_cust = e.target.min_cust.value;
+  var max_cust = e.target.max_cust.value;
+  var avg_cookies = e.target.avg_cookies.value;
 
   console.log(stand, min_cust, max_cust, avg_cookies);
   var storeOne = new Store(min_cust, max_cust, avg_cookies, stand);
