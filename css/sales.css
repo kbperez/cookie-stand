@@ -2,11 +2,19 @@
 
 body {
   font-family: times;
+  color: #494b37;
+  background: rgba(202, 174, 118, 0.52);
+  opacity: 50%;
 }
 
 header {
   text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #fff;
   background: #caae76;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -43,7 +51,7 @@ input[type="number"]:focus {
 button {
   margin-left: 20px;
   margin-bottom: 10px;
-  background: #9d542c;
+  background: #494b37;
   color: #fff;
   padding: 8px 18px;
   border-radius: 3px:
@@ -57,7 +65,7 @@ table {
 }
 
 thead{
-  background: #494b37;
+  background: #9d542c;
   color: white;
   padding: 20px;
   border: solid 1px white;
