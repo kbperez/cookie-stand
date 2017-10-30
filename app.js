@@ -44,7 +44,6 @@ for (var i = 0; i < times.length; i++)  {
   }
  }
 
-
 //Create an array with the store location first, the hourly sales data, and total  location sales, converts array to a string and adds a table row
 
 Store.prototype.tableRow = function () {
@@ -65,8 +64,30 @@ Store.prototype.tableRow = function () {
   newRow = document.createElement('tr');
   newRow.innerHTML = rowInfoStr;
   table.appendChild(newRow);
-
 }
+// Function to compute column totals
+Store.prototype.colTotal = function () {
+    for (var i = 0; i < times.length; i++)  {
+      var rowInfo = ['<tf>' + "Totals" + '</tf>'];
+      console.log('begin',rowInfo);
+
+      for(var j=0; j < this.hrSales.length; j++) {
+        rowInfo.push('<tf>' + this.hrSales[j] + '</tf>');
+      }
+    rowInfo.push('<tf>' + this.dailyCookies + '</tf>');
+
+    console.log('String to push', rowInfo);
+    }
+  var rowInfoStr = rowInfo.join(' ');
+
+  console.log(rowInfoStr);
+  var newRow;
+
+  newRow = document.createElement('tr');
+  newRow.innerHTML = rowInfoStr;
+  table.appendChild(newRow);
+}
+
 //Function to receive input
 function formData(e) {
   event.preventDefault();
@@ -79,6 +100,7 @@ function formData(e) {
   console.log(stand, min_cust, max_cust, avg_cookies);
   var storeOne = new Store(min_cust, max_cust, avg_cookies, stand);
   storeOne.tableRow();
+  storeOne.colTotal();
   console.log(storeOne);
   form.reset();
 }
